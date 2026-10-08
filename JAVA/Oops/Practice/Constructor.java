@@ -1,11 +1,9 @@
-package Oops;
-
-class Car {
+class Car1 {
     String color;
     String Brand;
     int speed;
 
-    Car(String color, String Brand, int speed) {
+    Car1(String color, String Brand, int speed) {
         this.color = color;
         this.Brand = Brand;
         this.speed = speed;
@@ -26,7 +24,7 @@ class Car {
 
 public class Constructor {
     public static void main(String[] args) {
-        Car c1 = new Car("Blue", "BMW", 360);
+        Car1 c1 = new Car1("Blue", "BMW", 360);
         c1.displayInfo();
         c1.accelerate(50);
     }

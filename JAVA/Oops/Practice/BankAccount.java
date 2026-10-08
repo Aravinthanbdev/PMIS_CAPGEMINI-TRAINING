@@ -1,5 +1,3 @@
-package Oops;
-
 class Bank {
     String name;
     int accountNumber;
