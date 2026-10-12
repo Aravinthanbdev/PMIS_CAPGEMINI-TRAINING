@@ -1,10 +1,14 @@
-class Employee {
+class SalaryEmployee {
 
     private int id;
     private String name;
     private double salary;
 
-    public Employee(int id, String name, double salary) {
+    public SalaryEmployee() {
+        this(101, "Alice", 50000.0);
+    }
+
+    public SalaryEmployee(int id, String name, double salary) {
         this.id = id;
         this.name = name;
 
@@ -36,7 +40,7 @@ class Employee {
         }
     }
 
-    public void giveRaise(double percent) {
+    public void giveRaise(int percent) {
         if (percent > 0) {
             double raiseAmount = salary * (percent / 100.0);
             salary += raiseAmount;
@@ -52,11 +56,11 @@ class Employee {
 public class SalaryManagement {
     public static void main(String[] args) {
 
-        Employee emp = new Employee(101, "Alice", 50000.0);
+        SalaryEmployee emp = new SalaryEmployee();
 
         System.out.println("Initial Salary: ₹" + emp.getSalary());
 
-        emp.giveRaise(8);
+        emp.setSalary(emp.getSalary() * 1.08);
 
 
         emp.setSalary(-25000);
