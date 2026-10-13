@@ -12,7 +12,6 @@ public class fine {
         int X = a.nextInt();
         for (int i =0 ; i>n; i++){
             if(D%2==0){
-                if()
             }
         }
     }
