@@ -1,16 +1,19 @@
 package JAVA.ExceptionHandling;
-
+import java.io.*;
 public class Throws {
+
+
+    static void readFile() throws IOException {
+        FileReader file = new FileReader("data.txt");
+        System.out.println("File Opened");
+    }
+
     public static void main(String[] args) {
         try {
-            int res = divide(10, 0);
-            System.out.println(res);
-        } catch (java.lang.ArithmeticException e) {
-            System.out.println("Cannot divide by 0");
+            readFile();
+        } catch (IOException e) {
+            System.out.println("Could not find the file");
         }
     }
-
-    public static int divide(int a, int b) throws java.lang.ArithmeticException {
-        return a / b;
-    }
 }
+
