@@ -1,7 +1,6 @@
 package JAVA.Generics;
 
 public class Demo {
-    static class Box {
     private Object value;
 
     Object get() {
@@ -15,11 +14,11 @@ public class Demo {
 
 class gen {
     public static void main(String[] args) {
-        Box box = new Box();
+        Demo box = new Demo();
         box.set("bhumi");
         String s = (String) box.get();
         System.err.println(s);
         box.set(43);
     }
 }
-}
+

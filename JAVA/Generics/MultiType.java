@@ -1,12 +1,12 @@
 package JAVA.Generics;
 
-public class MultiType {
+public class MultiType <K,V> {
     // Multi type parameters
-static class Pair<K, V> {
+
     private K key;
     private V value;
 
-    Pair(K key, V value) {
+    MultiType(K key, V value) {
         this.key = key;
         this.value = value;
     }
@@ -22,7 +22,7 @@ static class Pair<K, V> {
 
 class gen {
     public static void main(String[] args) {
-        Pair<String, Integer> p = new Pair<>("Age", 25);
+        MultiType<String, Integer> p = new MultiType<String, Integer>("Age", 25);
 
         String k = p.getKey();
         Integer v = p.getValue();
@@ -30,4 +30,4 @@ class gen {
         System.out.println(k + ":" + v);
     }
 }
-}
+
