@@ -1,3 +1,5 @@
+package JAVA.Realationship;
+
 class Student {
     String name;
     static String collegeName = "IIT Bombay";

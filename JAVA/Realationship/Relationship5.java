@@ -1,3 +1,5 @@
+package JAVA.Realationship;
+
 abstract class Shape {
     private String colour;
 

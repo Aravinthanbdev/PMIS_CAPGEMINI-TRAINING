@@ -1,4 +1,4 @@
-
+package JAVA.Realationship;
 class Battery {
 
     int capacity;

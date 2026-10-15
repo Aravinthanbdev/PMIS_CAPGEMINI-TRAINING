@@ -1,3 +1,5 @@
+package JAVA.Realationship;
+
 public class Relationship2 {
     public static void main(String[] args) {
         Address address = new Address("Chennai", "Tamil Nadu", 600001);
