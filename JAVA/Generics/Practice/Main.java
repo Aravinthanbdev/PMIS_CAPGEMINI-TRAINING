@@ -1,4 +1,5 @@
 package JAVA.Generics.Practice;
+
 class Phone<T> {
     private T item;
 
@@ -16,7 +17,7 @@ public class Main {
         Phone<String> mobile = new Phone<>();
         mobile.setItem("Samsung");
 
-        Box<Integer> price = new Box<>();
+        Phone<Integer> price = new Phone<>();
         price.setItem(25000);
 
         System.out.println("Mobile: " + mobile.getItem());
