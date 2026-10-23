@@ -4,9 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.pmis</groupId>
-    <artifactId>calculator</artifactId>
+    <artifactId>Junit5</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <name>Junit5</name>
+    <description>A simple Junit5 project</description>
     <properties>
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
