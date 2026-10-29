@@ -1,0 +1,132 @@
+{
+  "info": {
+    "name": "QuickRelief - Campus Emergency Supply Tracker",
+    "description": "Import this collection into Postman and start the app first.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Add / restock medical kits",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"itemName\": \"Medical Kit\",\n  \"quantity\": 25\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/api/supplies"
+      }
+    },
+    {
+      "name": "2. Add / restock food packets",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"itemName\": \"Food Packet\",\n  \"quantity\": 100\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/api/supplies"
+      }
+    },
+    {
+      "name": "3. List supplies",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/supplies"
+      }
+    },
+    {
+      "name": "4. Allocate medical kits (valid)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"itemName\": \"Medical Kit\",\n  \"quantity\": 3,\n  \"requestedBy\": \"Campus Health Centre\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/api/requests"
+      }
+    },
+    {
+      "name": "5. Allocate more than stock (expect 409)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"itemName\": \"Medical Kit\",\n  \"quantity\": 9999,\n  \"requestedBy\": \"Test User\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/api/requests"
+      }
+    },
+    {
+      "name": "6. Allocate unknown item (expect 404)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"itemName\": \"Unknown Item\",\n  \"quantity\": 1,\n  \"requestedBy\": \"Test User\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{baseUrl}}/api/requests"
+      }
+    }
+  ]
+}
