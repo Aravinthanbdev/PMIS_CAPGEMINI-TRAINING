@@ -1,0 +1,43 @@
+{
+  "info": {
+    "name": "Student Management API",
+    "_postman_id": "c2f2d4d7-1c7b-4d32-9a13-8a8a5a9f7e21",
+    "description": "Requests for the in-memory Student Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "Get all students",
+      "request": { "method": "GET", "url": "{{baseUrl}}/students" }
+    },
+    {
+      "name": "Get student ID 1",
+      "request": { "method": "GET", "url": "{{baseUrl}}/students/1" }
+    },
+    {
+      "name": "Add student",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"name\": \"Amit Patil\",\n  \"email\": \"amit@example.com\",\n  \"course\": \"REST API\"\n}", "options": { "raw": { "language": "json" } } },
+        "url": "{{baseUrl}}/students"
+      }
+    },
+    {
+      "name": "Update student ID 2",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"name\": \"Priya Deshmukh\",\n  \"email\": \"priya.new@example.com\",\n  \"course\": \"Advanced Spring Boot\"\n}", "options": { "raw": { "language": "json" } } },
+        "url": "{{baseUrl}}/students/2"
+      }
+    },
+    {
+      "name": "Delete student ID 1",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/students/1" }
+    }
+  ]
+}
